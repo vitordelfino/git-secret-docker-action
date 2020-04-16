@@ -1,0 +1,5 @@
+name: "Git Secret Reveal"
+description: "Reveal files encrypted with git secret"
+runs:
+  using: "docker"
+  image: "Dockerfile"
