@@ -24,7 +24,7 @@ echo "Configure gpg"
 echo --no-tty >> ~/.gnupg/gpg.conf echo use-agent >> ~/.gnupg/gpg.conf && echo pinentry-mode loopback >> ~/.gnupg/gpg.conf && echo allow-loopback-pinentry >> ~/.gnupg/gpg-agent.conf && echo RELOADAGENT | gpg-connect-agent;
 
 echo "Import gpg key"
-gpg --import --batch --yes $HOME/secrets/secret_key;
+gpg --import --no-tty --batch --yes $HOME/secrets/secret_key;
 
 echo "Reveal encrypted files"
 git secret reveal;
