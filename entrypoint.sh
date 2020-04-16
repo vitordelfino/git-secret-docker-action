@@ -12,8 +12,13 @@ if [ -z "$DECRYPT_FILE_NAME" ]; then
   exit 126 
 fi
 
-if [ -z "$LARGE_SECRET_PASSPHRASE" ]; then
-  echo "LARGE_SECRET_PASSPHRASE is required"
+if [ -z "$DECRYPT_SECRET_PASSPHRASE" ]; then
+  echo "DECRYPT_SECRET_PASSPHRASE is required"
+  exit 126 
+fi
+
+if [ -z "$REVEAL_SECRET_PASSPHRASE" ]; then
+  echo "REVEAL_SECRET_PASSPHRASE is required"
   exit 126 
 fi
 
@@ -27,4 +32,4 @@ echo "Import gpg key"
 gpg --import --no-tty --batch --yes $HOME/secrets/secret_key;
 
 echo "Reveal encrypted files"
-git secret reveal -p $LARGE_SECRET_PASSPHRASE;
+git secret reveal -p $REVEAL_SECRET_PASSPHRASE;
