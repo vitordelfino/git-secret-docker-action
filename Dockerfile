@@ -1,5 +1,5 @@
-FROM ubuntu
+FROM ubuntu:alpine
 
-RUN apk update && apk --no-cache add python giy git-secret
+RUN apk update && apk --no-cache add python git git-secret
 
 ENTRYPOINT [ "git secret reveal" ]
