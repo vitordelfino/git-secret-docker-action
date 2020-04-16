@@ -27,4 +27,4 @@ echo "Import gpg key"
 gpg --import --no-tty --batch --yes $HOME/secrets/secret_key;
 
 echo "Reveal encrypted files"
-git secret reveal;
+git secret reveal -p $LARGE_SECRET_PASSPHRASE;
